@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41c8197a6eb795948b2faefd22cc2c32
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189441
+  packageName: Forest Starter Kit
+  packageVersion: 1.0
+  assetPath: Assets/DA/Forest_Tree/Texture_And_Materials/Bark/DA_Forest_Tree_Bark.mat
+  uploadId: 675003
