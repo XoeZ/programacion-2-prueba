@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33721d29e60ae7043bbe304cc8b0c1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_identifier: Muerte
+  m_identifier: Dead
 --- !u!1 &541162150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9fefd9cb4c7444097078dd66b3a843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_initialIdentifier: 
+  m_initialIdentifier: Gameplay
   m_panels:
   - {fileID: 2144384627}
   - {fileID: 946899557}
