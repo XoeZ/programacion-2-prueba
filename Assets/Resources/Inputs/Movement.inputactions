@@ -6,24 +6,99 @@
             "id": "fb0c7968-0ffa-4868-82f0-be79aeaf7ad3",
             "actions": [
                 {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "359af372-6aaa-47a2-abea-0b514e5cb424",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "14cdcafc-031e-4237-90ad-1aceb3d935f1",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "74571540-0681-4ae0-afa0-7890c62a3289",
-                    "path": "w",
-                    "interactions": "Hold",
+                    "name": "2D Vector",
+                    "id": "b6a37444-e60d-4697-947f-895fd67cdf45",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "2b459b7c-19ed-477b-93cd-477d711f5133",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
                     "processors": "",
                     "groups": ";PC",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "7547887b-d83e-4cb6-a9bf-95e97a238ad0",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "fc2cf511-4971-4f7b-a898-adca305747a7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "42fdfa72-079b-45fd-9387-476df31f8703",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0dc41bfc-5c37-4b1e-8a25-61462b6b02ae",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=-100,y=100)",
+                    "groups": ";Gamepad",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f2d2baee-4cad-4dae-be76-447d5aaa0fd3",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "DeltaTimeScale,ScaleVector2(x=0.1,y=0.1)",
+                    "groups": ";Keyboard&Mouse;PC",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
