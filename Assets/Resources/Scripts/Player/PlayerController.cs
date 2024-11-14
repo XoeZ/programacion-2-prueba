@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public Transform cameraRotation;
 
+    public GameObject cameraPlayer;
+
 
     void Update()
     {
@@ -18,6 +20,11 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         inputMovement = context.ReadValue<Vector2>();
+    }
+
+    public void ChangeCamera(InputAction.CallbackContext context)
+    {
+        
     }
 
     void FixedUpdate()
