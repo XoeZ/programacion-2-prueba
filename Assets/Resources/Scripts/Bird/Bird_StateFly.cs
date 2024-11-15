@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +11,8 @@ public class Bird_StateFly : Bird_BaseStateMachine
     public Transform objectFlyPosition;
     private float temporizadorInicialParaIdle;
     public float tiempoEnVuelo = 5;
+
+    public bool hunt;
 
 
     public override void Enter()
@@ -32,6 +37,11 @@ public class Bird_StateFly : Bird_BaseStateMachine
             Controller.StateMachine.SwitchState(Controller.StateMachine.Idle);
             tiempoEnVuelo = temporizadorInicialParaIdle;
         }
+
+        if(hunt == true)
+        {
+            Controller.StateMachine.SwitchState(Controller.StateMachine.Hunt);
+        }
     }
 
     public override void FixedLogic()
@@ -42,5 +52,14 @@ public class Bird_StateFly : Bird_BaseStateMachine
     public override void Exit()
     {
         base.Exit();
+        hunt = false;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            hunt = true;
+        }
     }
 }
