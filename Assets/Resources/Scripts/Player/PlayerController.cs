@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,10 +43,11 @@ public class PlayerController : MonoBehaviour
     public void Pause()
     {
         GameManager.SwitchState(GameState.Pause);
+        
         Debug.Log("Esta en pausa");
     }
 
-    public void UnPouse()
+    public void UnPause()
     {
         GameManager.SwitchState(GameState.Gameplay);
     }
@@ -69,6 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         InputManager.Move += Move;
         InputManager.Pause += Pause;
+        InputManager.Interactions += ChangeCamera;
         
     }
 
@@ -76,5 +79,6 @@ public class PlayerController : MonoBehaviour
     {
         InputManager.Move -= Move;
         InputManager.Pause -= Pause;
+        InputManager.Interactions -= ChangeCamera;
     }
 }

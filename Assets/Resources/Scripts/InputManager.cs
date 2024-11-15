@@ -16,6 +16,7 @@ public class InputManager : MonoBehaviour
     public static event System.Action<Vector2> Move;
 
     public static event System.Action Pause;
+    public static event System.Action Interactions;
 
     private void OnEnable() => playerInput.onActionTriggered += HandleInput;
     
@@ -25,6 +26,7 @@ public class InputManager : MonoBehaviour
     {
         TryInvokeMove(context);
         TryInvokePause(context);
+        CameraChange(context); 
     }
     private void TryInvokeMove(InputAction.CallbackContext context) 
     {
@@ -41,6 +43,15 @@ public class InputManager : MonoBehaviour
         if (context.performed) return;
 
         Pause?.Invoke();
+    }
+
+    private void CameraChange(InputAction.CallbackContext context)
+    {
+        if (context.action.name != "Interactions") return;
+        if (context.started)
+        {
+            Interactions?.Invoke();
+        }
     }
 
 }

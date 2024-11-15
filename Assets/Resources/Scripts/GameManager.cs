@@ -38,18 +38,5 @@ public class GameManager : Singleton<GameManager>
         CurrentState = state;
         OnStateChange?.Invoke(state);
     }
-
-    private void Update()
-    {
-        if(GameManager.CurrentState == GameState.Gameplay)
-        {
-            Time.timeScale = 1.0f;
-        }
-
-        if(GameManager.CurrentState == GameState.Pause)
-        {
-            Time.timeScale = 0f;
-        }
-    }
 }
 
