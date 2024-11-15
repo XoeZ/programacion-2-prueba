@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, cameraRotation.eulerAngles.y, transform.eulerAngles.z);
 
-        if(vida ==0)
+        if(vida <= 0)
         {
             GameManager.SwitchState(GameState.GameOver);
             Debug.Log("Has muerto");
