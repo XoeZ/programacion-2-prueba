@@ -20,6 +20,18 @@ public class PlayerController : MonoBehaviour
     {
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, cameraRotation.eulerAngles.y, transform.eulerAngles.z);
 
+    }
+
+    [ContextMenu("Get 50 damage")]
+    public void DebugGetDamage_50()
+    {
+        GetDamage(50);
+    }
+
+    public void GetDamage(int damage)
+    {
+        vida -= damage;
+
         if(vida <= 0)
         {
             GameManager.SwitchState(GameState.GameOver);
