@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeCamera(InputAction.CallbackContext context)
     {
-        
+        if(cameraPlayer != null)
+        {
+            cameraPlayer.SetActive(!cameraPlayer.activeSelf);
+        }
     }
 
     void FixedUpdate()

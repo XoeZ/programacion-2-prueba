@@ -22,7 +22,4 @@ public class Bird_Controller : MonoBehaviour
             StateMachine.SwitchState(StateMachine.Idle);
         }
     }
-
-
-
 }

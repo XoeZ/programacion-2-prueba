@@ -1881,8 +1881,10 @@ MonoBehaviour:
   debugMode: 0
   idle:
     objectDestination: {fileID: 826170920}
+    tiempoEnIdle: 13
   fly:
     objectFlyPosition: {fileID: 510917744}
+    tiempoEnVuelo: 20
 --- !u!114 &1071011909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,6 +2119,7 @@ MonoBehaviour:
   inputMovement: {x: 0, y: 0, z: 0}
   speed: 5
   cameraRotation: {fileID: 346771791}
+  cameraPlayer: {fileID: 346771788}
 --- !u!136 &1191669677
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2212,6 +2215,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 359af372-6aaa-47a2-abea-0b514e5cb424
     m_ActionName: 'Gameplay/Look[/Mouse/delta]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1191669676}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ChangeCamera
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 66eb939d-7a49-4580-a120-ddba92026f5f
+    m_ActionName: 'Gameplay/Interactions[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
