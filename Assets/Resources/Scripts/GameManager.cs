@@ -6,8 +6,8 @@ using UnityEngine;
 
 public enum GameState
 {
-    Menu,
     Gameplay,
+    Pause,
     Victory,
     GameOver
 }
@@ -30,16 +30,26 @@ public class GameManager : Singleton<GameManager>
     {
         SwitchState(m_initialState);
     }
-    // if (health == 0) 
-    // {
-    //      GameManager.SwitchState(GameState.GameOver);
-    // }
+
     public static void SwitchState(GameState state)
     {
         if (state == CurrentState) return;
 
         CurrentState = state;
         OnStateChange?.Invoke(state);
+    }
+
+    private void Update()
+    {
+        if(GameManager.CurrentState == GameState.Gameplay)
+        {
+            Time.timeScale = 1.0f;
+        }
+
+        if(GameManager.CurrentState == GameState.Pause)
+        {
+            Time.timeScale = 0f;
+        }
     }
 }
 

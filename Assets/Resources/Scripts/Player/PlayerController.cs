@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,23 +12,42 @@ public class PlayerController : MonoBehaviour
 
     public GameObject cameraPlayer;
 
+    public float vida;
+
 
     void Update()
     {
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, cameraRotation.eulerAngles.y, transform.eulerAngles.z);
+
+        if(vida ==0)
+        {
+            GameManager.SwitchState(GameState.GameOver);
+            Debug.Log("Has muerto");
+        }
     }
 
-    public void Move(InputAction.CallbackContext context)
+    public void Move(Vector2 move)
     {
-        inputMovement = context.ReadValue<Vector2>();
+        inputMovement = move;
     }
 
-    public void ChangeCamera(InputAction.CallbackContext context)
+    public void ChangeCamera()
     {
         if(cameraPlayer != null)
         {
             cameraPlayer.SetActive(!cameraPlayer.activeSelf);
         }
+    }
+
+    public void Pause()
+    {
+        GameManager.SwitchState(GameState.Pause);
+        Debug.Log("Esta en pausa");
+    }
+
+    public void UnPouse()
+    {
+        GameManager.SwitchState(GameState.Gameplay);
     }
 
     void FixedUpdate()
@@ -43,5 +63,18 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = forward * inputMovement.y + right * inputMovement.x;
 
         rb.linearVelocity = moveDirection * speed + new Vector3(0, rb.linearVelocity.y, 0);
+    }
+
+    private void OnEnable()
+    {
+        InputManager.Move += Move;
+        InputManager.Pause += Pause;
+        
+    }
+
+    private void OnDisable()
+    {
+        InputManager.Move -= Move;
+        InputManager.Pause -= Pause;
     }
 }
