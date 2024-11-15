@@ -34,7 +34,7 @@ public class Bird_StateFly : Bird_BaseStateMachine
 
         if(tiempoEnVuelo < 0 )
         {
-            Controller.StateMachine.SwitchState(Controller.StateMachine.Idle);
+            Controller.StateMachine.SwitchState(Controller.StateMachine.Hunt);
             tiempoEnVuelo = temporizadorInicialParaIdle;
         }
 
@@ -53,13 +53,5 @@ public class Bird_StateFly : Bird_BaseStateMachine
     {
         base.Exit();
         hunt = false;
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            hunt = true;
-        }
     }
 }

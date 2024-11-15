@@ -223,6 +223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 935605542}
   - {fileID: 942462413}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -606,6 +607,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a55a64927b149fd43bad5ca950f2c1f9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1071011908}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a55a64927b149fd43bad5ca950f2c1f9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1071011913}
   m_SourcePrefab: {fileID: 100100000, guid: a55a64927b149fd43bad5ca950f2c1f9, type: 3}
 --- !u!1 &314480459
 GameObject:
@@ -1442,6 +1446,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721339436}
   m_CullTransparentMesh: 1
+--- !u!1 &824224271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824224272}
+  - component: {fileID: 824224273}
+  m_Layer: 0
+  m_Name: Interactuable de pajaro
+  m_TagString: AgarrarPlayer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824224272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824224271}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191669680}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &824224273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824224271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2.0000005, z: 1}
+  m_Center: {x: 0, y: 0.50000024, z: 0}
 --- !u!1 &826170917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1584,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720874280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935605541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935605542}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935605542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935605541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 70476988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942462412
 GameObject:
@@ -1885,6 +1973,19 @@ MonoBehaviour:
   fly:
     objectFlyPosition: {fileID: 510917744}
     tiempoEnVuelo: 20
+    hunt: 0
+  hunt:
+    playerDestination: {fileID: 1191669680}
+    tiempoDeAtaque: 4
+  grab:
+    player: {fileID: 1191669675}
+    objectFlyPosition: {fileID: 510917744}
+    tiempoParaSoltar: 5
+    agarrado: 0
+  drop:
+    objectFlyPosition: {fileID: 510917744}
+    tiempoEnVuelo: 5
+    hunt: 0
 --- !u!114 &1071011909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,6 +2004,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a55a64927b149fd43bad5ca950f2c1f9, type: 3}
   m_PrefabInstance: {fileID: 312087607}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1071011913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071011904}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0626068, y: 2.394349, z: 3.679194}
+  m_Center: {x: 0, y: 0.98113084, z: 0.18628788}
 --- !u!1 &1109820271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,9 +2203,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crab Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f47af0b057975b45b46324e4a3252f0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8f47af0b057975b45b46324e4a3252f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824224272}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f47af0b057975b45b46324e4a3252f0, type: 3}
       insertIndex: -1

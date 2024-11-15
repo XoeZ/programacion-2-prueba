@@ -1,3 +1,4 @@
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 
@@ -7,6 +8,7 @@ public class Bird_StateIdle : Bird_BaseStateMachine
     public Transform objectDestination;
     private float temporizadorInicialParaVolar;
     public float tiempoEnIdle;
+
     public override void Enter()
     {
         base.Enter();
